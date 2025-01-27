@@ -1,0 +1,519 @@
+@use 'modules/variables'
+@use 'sass:color'
+@use './mixins'
+@use './carousel'
+@use './caderousel'
+@use './temoin'
+
+// Corps global
+body
+  background: linear-gradient(to bottom right, variables.$bg-gradient-start, variables.$bg-gradient-end)
+  min-height: 100vh
+  font-family: 'Inter', 'Arial', sans-serif
+  margin: 0
+  padding: 0
+  color: variables.$dark-color
+
+h2
+  color: variables.$primary-color
+  font-size: 2rem
+  text-align: center
+  margin-top: 2rem
+  margin-bottom: 2rem
+
+// Navbar
+.navbar
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1000
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px
+  background-color: variables.$primary-color
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+
+  &__brand
+    font-size: 24px
+    font-weight: bold
+    color: #fff
+
+  &__menu
+    display: flex
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      position: relative
+      margin-left: 20px
+
+      &::before
+        content: ""
+        position: absolute
+        left: 50%
+        width: 60px
+        height: 2px
+        background: #E91E63 // Red color
+        bottom: -10px // Adjust the position as needed
+        margin-left: -30px
+        opacity: 0
+        transition: opacity 0.3s ease-in-out
+
+      &:hover::before
+        opacity: 1
+
+      a
+        color: #fff
+        text-decoration: none
+        font-size: 16px
+        transition: all 0.3s ease-in-out
+
+        &:hover
+          color: variables.$accent-color
+          transform: scale(1.05)
+
+  &__toggle
+    display: none
+    font-size: 24px
+    color: #fff
+    cursor: pointer
+
+    .hamburger-icon
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      width: 24px
+      height: 24px
+
+      span
+        display: block
+        width: 100%
+        height: 2px
+        background-color: #fff
+
+  @media (max-width: 768px)
+    &__menu
+      display: none
+      flex-direction: column
+      position: absolute
+      top: 70px
+      left: 0
+      width: 100%
+      background-color: variables.$primary-color
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+      padding: 20px
+
+      li
+        margin-left: 0
+        margin-bottom: 10px
+
+    &__toggle
+      display: block
+
+    &.responsive
+      .navbar__menu
+        display: flex
+
+  @media (min-width: 768px) and (max-width: 1024px)
+    &__menu
+      flex-direction: column
+      align-items: flex-start
+
+    li
+      margin-left: 0
+      margin-bottom: 10px
+
+.logo
+  width: 100px // Adjust the width as needed
+  height: auto
+  filter: invert(100%) // Invert the colors
+
+button, .btn 
+  background-color: variables.$bouton-primary
+  color: white
+  border: none
+  padding: 10px 20px
+  font-size: 16px
+  cursor: pointer
+  transition: background-color 0.3s ease-in-out
+
+  &:hover 
+    background-color: color.adjust(variables.$bouton-primary, $lightness: -10%)
+
+.bg-sous-navbar 
+  background-color: variables.$secondary-color /* Ensure this is a dark color */
+  color: white /* Ensure the text color contrasts with the background */
+  padding: 50px 0
+  text-align: center
+
+.bg-sous-navbar h1 
+  font-size: 2rem
+
+.bg-sous-navbar p 
+  font-size: 1.2rem
+
+.main-image
+  width: 100%
+  height: 20rem
+  object-fit: cover
+  margin: 0
+
+/* FAQ FAQ FAQ */
+.section-title
+  text-align: center
+  color: variables.$primary-color
+  margin-bottom: 1rem
+
+.section.bg-light 
+  background-color: variables.$accent-color
+  color: variables.$text-primary
+
+.accordion-item
+  margin: 0
+  border: none
+
+.accordion-header
+  margin: 0
+
+.accordion-button 
+  background-color: variables.$primary-color
+  color: white
+  border: none
+  padding: 0.5rem 1rem 
+  font-size: 1.2rem
+  margin: 0
+  &:hover 
+    background-color: color.adjust(variables.$primary-color, $lightness: -10%)
+  &:focus
+    box-shadow: none
+
+.accordion-button:not(.collapsed) 
+  color: white
+  background-color: variables.$secondary-color
+
+.accordion-body 
+  background-color: color.adjust(variables.$primary-color, $lightness: 40%)
+  color: variables.$text-secondary
+  padding: 0
+  font-size: 1rem
+
+//footer
+.footer
+  background: variables.$primary-color
+  color: white
+  padding: 2rem 0
+  text-align: center
+
+.social-icons
+  display: flex
+  gap: 10px
+
+.social-icon
+  width: 24px
+  height: 24px
+
+#drag-container
+  width: 800px
+  height: 400px
+  position: relative
+  transform-style: preserve-3d
+  transform: rotateX(-10deg)
+  transition: transform 0.5s
+  margin: 0 auto
+  cursor: grab
+
+  &:active
+    cursor: grabbing
+
+#spin-container
+  position: absolute
+  width: 100%
+  height: 100%
+  transform-style: preserve-3d
+  transition: transform 5s
+
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 300px
+    height: 300px
+    object-fit: contain
+    border-radius: 10px
+    transform-origin: 50% -400px
+    transition: transform 1s ease-in-out
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3)
+
+#ground
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 50%
+  left: 50%
+  background: radial-gradient(circle, #444, transparent)
+  transform: translate(-50%, -50%) rotateX(90deg)
+
+#drag-container:hover #spin-container
+  animation: spin 20s infinite linear
+
+@keyframes spin
+  from
+    transform: rotateY(0deg)
+  to
+    transform: rotateY(360deg)
+
+.presentation-section
+  background: variables.$text-primary
+  padding: 80px 0 // Adjust padding to ensure it is below the navbar
+
+.presentation-container 
+  display: flex
+  width: 70%
+  height: 120vh
+  margin: 0 auto
+
+.video-wrapper 
+  flex: 1
+  position: relative
+  overflow: hidden
+
+.video-wrapper video 
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.sound-toggle 
+  position: absolute
+  top: 15px
+  right: 15px
+  background: rgba(255,255,255,0.3)
+  color: black
+  border: none
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  cursor: pointer
+  z-index: 10
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 24px
+  transition: background 0.3s ease
+
+.sound-toggle:hover 
+  background: rgba(255,255,255,0.5)
+
+@media (max-width: 768px) 
+  .presentation-container 
+    flex-direction: column
+    height: auto
+
+@keyframes scale-animation
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(1.1)
+
+@media screen and (max-width: 768px)
+  .video-container
+    flex-direction: column
+    height: auto
+
+  .video-wrapper
+    width: 100%
+    height: 50vh
+
+@media screen and (max-width: 1024px)
+  #drag-container
+    width: 100%
+    height: auto
+    transform: rotateX(0deg)
+
+  #spin-container img
+    width: 200px
+    height: 200px
+    transform-origin: 50% -300px
+
+.video-container 
+  position: relative
+  overflow: hidden
+  border-radius: 8px
+  height: 200px
+  width: 100%
+  cursor: pointer
+
+.video-poster 
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+  z-index: 1
+  transition: opacity 0.3s ease-in-out
+
+.testimonial-video 
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+  z-index: 0
+  display: none // La vidéo reste cachée jusqu'à l'interaction
+
+// Bouton Play
+.btn-play 
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background: rgba(0, 0, 0, 0.6)
+  color: white
+  padding: 10px 20px
+  border: none
+  border-radius: 5px
+  z-index: 2
+  cursor: pointer
+  font-size: 16px
+  transition: background 0.3s ease-in-out
+
+  &:hover 
+    background: rgba(0, 0, 0, 0.8)
+  
+// Contrôles vidéo
+.video-controls 
+  position: absolute
+  bottom: 10px
+  width: 100% // Étendre les contrôles sur toute la largeur
+  display: flex
+  justify-content: space-between // Placer les boutons aux extrémités
+  padding: 0 10px // Espacement horizontal
+  z-index: 3
+
+  // Style des boutons
+  button 
+    background: rgba(0, 0, 0, 0.6)
+    color: white
+    padding: 5px 10px
+    border: none
+    border-radius: 5px
+    font-size: 14px
+    cursor: pointer
+    transition: background 0.3s ease-in-out
+
+    &:hover 
+      background: rgba(0, 0, 0, 0.8)
+      // Section Agenda
+#agenda 
+  padding: 40px 20px
+  text-align: center
+  
+  .calendar 
+    background-color: #f4f4f4
+    padding: 20px
+    margin: 20px 0
+    border-radius: 8px
+  
+
+  .events-list ul 
+    list-style-type: none
+    padding: 0
+    
+    li 
+      margin: 20px 0
+      padding: 15px
+      border: 1px solid #ccc
+      border-radius: 5px
+      background-color: #fff
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+      h3 
+        margin: 0
+        color: #333
+        font-size: 20px
+      
+
+      p 
+        color: #666
+      
+    
+  
+
+
+// Section About Us
+#about-us 
+  padding: 40px 20px
+  text-align: center
+  
+  .team-grid 
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    gap: 20px
+    
+    .team-member 
+      text-align: center
+
+      img 
+        width: 100%
+        max-width: 150px
+        border-radius: 50%
+        margin-bottom: 10px
+      
+
+      h3 
+        font-size: 18px
+        color: #333
+      
+
+      p 
+        color: #777
+      
+    
+  
+
+  .mission-vision 
+    margin-top: 30px
+    font-style: italic
+    color: #555
+  
+
+
+// Section Vidéo
+#video 
+  padding: 40px 20px
+  text-align: center
+
+  iframe 
+    width: 100%
+    height: 500px
+    border: none
+    border-radius: 8px
+  
+
+
+.calendar 
+  .calendar-grid 
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    gap: 5px
+  
+  .bg-warning 
+    background-color: #ffc107 !important
+    color: #000
+    font-weight: bold
+  
+  .col 
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+  
+  .col:hover 
+    background-color: #e0e0e0
+  
+

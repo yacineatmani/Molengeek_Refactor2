@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient min-h-screen font-pocket">
+    <!-- Navbar -->
+   <!-- Navbar -->
+   <nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="navbar__brand">Molengeek</a>
+        
+        <!-- Menu hamburger pour petits écrans -->
+        <button id="hamburgerButton" class="navbar__toggle">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu de navigation principal visible sur écrans larges et tablettes -->
+        <ul class="navbar__menu">
+            <li><a href="campus.html" class="nav-link">CAMPUS</a></li>
+            <li><a href="formation.html" class="nav-link">FORMATION</a></li>
+            <li><a href="coworking.html" class="nav-link">COWORKING</a></li>
+            <li><a href="agenda.html" class="nav-link">AGENDA</a></li>
+            <li><a href="propos.html" class="nav-link">À PROPOS</a></li>
+            <li><a href="presse.html" class="nav-link">PRESSE</a></li>
+            <li><a href="sidegeek.html" class="nav-link">SIDEGEEK</a></li>
+            <li><a href="job.html" class="nav-link">JOBS</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <!-- Contenu principal -->
+    <section class="main-section">
+        <img src="public/img/agenda.png" class="main-image" alt="Job Opportunities">
+        <!-- Ajoutez ici le contenu spécifique à la page Agenda -->
+    </section>
+    <!-- Agenda -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Agenda Molengeek</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="public/img/akaton.jpg" class="card-img-top" alt="Event 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Hackathon</h5>
+                        <p class="card-text">Venez participer à notre hackathon annuel et démontrez vos compétences en développement.</p>
+                        <p class="card-text"><small class="text-muted">28 mai 2023</small></p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="public/img/IA.jpg" class="card-img-top" alt="Event 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Conférence sur l'IA</h5>
+                        <p class="card-text">Rejoignez-nous pour une conférence passionnante sur les dernières avancées en intelligence artificielle.</p>
+                        <p class="card-text"><small class="text-muted">12 juin 2023</small></p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="public/img/web.jpg" class="card-img-top" alt="Event 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Atelier de développement web</h5>
+                        <p class="card-text">Participez à notre atelier pour apprendre les bases du développement web de manière pratique.</p>
+                        <p class="card-text"><small class="text-muted">3 juillet 2023</small></p>
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="agenda" class="container py-5">
+    <h2 class="text-center mb-4">Agenda</h2>
+    <div class="calendar bg-light p-3 rounded">
+      <!-- Place ton calendrier ici -->
+      <p>Calendrier interactif ici</p>
+      <section id="agenda" class="container py-5">
+        <h2 class="text-center mb-4">Calendrier Interactif</h2>
+        <div class="calendar bg-light p-4 rounded shadow">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <button id="prevMonth" class="btn btn-primary">&lt; Mois Précédent</button>
+            <h3 id="currentMonth" class="m-0"></h3>
+            <button id="nextMonth" class="btn btn-primary">Mois Suivant &gt;</button>
+          </div>
+          <div class="calendar-grid row text-center">
+            <!-- Les jours seront générés ici par JavaScript -->
+          </div>
+        </div>
+        <div class="events-list mt-4">
+          <h4 class="text-center">Événements</h4>
+          <ul id="eventList" class="list-unstyled">
+            <!-- Les événements s'afficheront ici -->
+          </ul>
+        </div>
+      </section>
+      
+    </div>
+    <div class="events-list mt-4">
+      <ul class="list-unstyled">
+        <li class="mb-4 p-3 border rounded shadow-sm">
+          <h3>Formation HTML - Niveau débutant</h3>
+          <p>Du 27/01 au 30/01</p>
+          <p>Détails : Introduction au HTML pour débutants...</p>
+        </li>
+        <li class="mb-4 p-3 border rounded shadow-sm">
+          <h3>Formation Réseaux Sociaux - Niveau débutant</h3>
+          <p>Du 27/01 au 29/01</p>
+          <p>Détails : Introduction aux réseaux sociaux pour débutants...</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  
+  <section id="about-us" class="container py-5">
+    <h2 class="text-center mb-4">About Us</h2>
+    <div class="team-grid row">
+      <div class="team-member col-md-4 text-center mb-4">
+        <img src="public/img/ibrahim.jpg" alt="Membre 1" class="img-fluid rounded-circle mb-3" style="max-width: 150px;">
+        <h3>Ibrahim Oussari</h3>
+        <p>Directeur</p>
+      </div>
+      <div class="team-member col-md-4 text-center mb-4">
+        <img src="public/img/cactus.jpg" alt="Membre 2" class="img-fluid rounded-circle mb-3" style="max-width: 150px;">
+        <h3>Abderahim kbib</h3>
+        <p>Coach</p>
+      </div>
+      <div class="team-member col-md-4 text-center mb-4">
+        <img src="public/img/Sara.jpg" alt="" class="img-fluid rounded-circle mb-3" style="max-width: 150px;">
+        <h3>Sara Oualad</h3>
+        <p>CEO</p>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <p><strong>Notre mission :</strong> Créer des opportunités d'apprentissage pour les jeunes...</p>
+      <p><strong>Notre vision :</strong> Un monde où la technologie est accessible à tous.</p>
+    </div>
+  </section>
+  
+  
+
+  <!-- Section Vidéo YouTube -->
+  <section id="video" class="container py-5">
+    <h2 class="text-center mb-4">Découvrez Molengeek en action !</h2>
+    <div class="ratio ratio-16x9">
+
+      <iframe src="https://www.youtube.com/embed/EwenXbkkBUQ" title="Molengeek Vidéo" allowfullscreen></iframe>
+    </div>
+  </section>
+  
+  
+
+
+    <!-- Footer -->
+   
+    <!-- Footer -->
+    <footer class="text-white py-4" style="background-color: var(--secondary);">
+      <div class="container">
+        <div class="row">
+          <!-- Réseaux Sociaux -->
+          <div class="col-12 text-center mb-3">
+            <div class="social-icons d-flex justify-content-center gap-3">
+              <a href="https://facebook.com" class="text-white text-decoration-none">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+              <a href="https://twitter.com" class="text-white text-decoration-none">
+                <i class="fab fa-twitter"></i> Twitter
+              </a>
+              <a href="https://instagram.com" class="text-white text-decoration-none">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+    
+          <!-- Copyright et Crédit -->
+          <div class="col-12 text-center">
+            <p class="mb-1">
+              &copy; <span class="fw-bold">MolenGeek</span>. Tous droits réservés.
+            </p>
+            <p class="small">
+              Designed by <span class="fw-bold">MolenGeek</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script type="module" src="public/js/calendar.js"></script>
+</body>
+</html>

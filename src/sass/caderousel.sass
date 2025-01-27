@@ -1,0 +1,57 @@
+#drag-container 
+  width: 800px
+  height: 400px
+  position: relative
+  transform-style: preserve-3d
+  transform: rotateX(-10deg)
+  transition: transform 0.5s
+  margin: 0 auto
+  cursor: grab
+
+
+#drag-container:active 
+  cursor: grabbing
+
+
+#spin-container 
+  position: absolute
+  width: 100%
+  height: 100%
+  transform-style: preserve-3d
+  transition: transform 5s
+
+
+#spin-container img 
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 300px /* Augmenter la taille des images */
+  height: 300px /* Augmenter la taille des images */
+  object-fit: contain /* Utiliser contain pour éviter de rogner les images */
+  border-radius: 10px
+  transform-origin: 50% -400px /* Ajuster la distance pour les nouvelles dimensions */
+  transition: transform 1s ease-in-out
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3)
+
+
+#ground 
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 50%
+  left: 50%
+  background: radial-gradient(circle, #444, transparent)
+  transform: translate(-50%, -50%) rotateX(90deg)
+
+
+#drag-container:hover #spin-container 
+  animation: spin 20s infinite linear
+
+
+@keyframes spin 
+  from 
+    transform: rotateY(0deg)
+  
+  to 
+    transform: rotateY(360deg)
+  

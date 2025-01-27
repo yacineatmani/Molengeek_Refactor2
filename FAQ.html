@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="public/css/FAQ.css">
+  <style>
+    /* Centrage du conteneur FAQ */
+    .faq-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fa; /* Tu peux changer la couleur de fond si tu veux */
+    }
+    
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+  /* Centrer le titre FAQ au milieu */
+.faq-title {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  height: 100px; /* Donne une hauteur à la zone de titre */
+  text-align: center; /* Assurer que le texte dans <h2> est centré */
+}
+
+
+    .card {
+      margin-bottom: 10px;
+    }
+
+    .card-header {
+      cursor: pointer;
+    }
+
+    /* Style pour la classe show (quand l'élément est déroulé) */
+    .collapse {
+      display: none;
+    }
+
+    .collapse.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <section class="faq-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="faq-title text-center pb-3">
+            <h2>FAQ</h2>
+          </div>
+        </div>
+        <div class="col-md-6 offset-md-3">
+          <div class="faq" id="accordion">
+            <div class="card">
+              <div class="card-header" id="faqHeading-1">
+                <div class="mb-0">
+                  <h5 class="faq-title" data-target="#faqCollapse-1">
+                    <span class="badge">1</span> What is Lorem Ipsum?
+                  </h5>
+                </div>
+              </div>
+              <div id="faqCollapse-1" class="collapse">
+                <div class="card-body">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="faqHeading-2">
+                <div class="mb-0">
+                  <h5 class="faq-title" data-target="#faqCollapse-2">
+                    <span class="badge">2</span> Where does it come from?
+                  </h5>
+                </div>
+              </div>
+              <div id="faqCollapse-2" class="collapse">
+                <div class="card-body">
+                  <p>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
+                </div>
+              </div>
+            </div>
+            <!-- Ajoute d'autres cartes FAQ ici -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script personnalisé -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqTitles = document.querySelectorAll('.faq-title');
+      
+      // Initialiser tous les éléments collapse à fermés
+      const allCollapses = document.querySelectorAll('.collapse');
+      allCollapses.forEach((collapse) => {
+        collapse.classList.remove('show'); // Empêcher l'affichage par défaut
+      });
+
+      faqTitles.forEach((title) => {
+        title.addEventListener('click', () => {
+          const target = document.querySelector(title.getAttribute('data-target'));
+          
+          // Toggle pour l'élément spécifique
+          target.classList.toggle('show');
+          
+          // Ferme les autres éléments
+          allCollapses.forEach((collapse) => {
+            if (collapse !== target) {
+              collapse.classList.remove('show');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
