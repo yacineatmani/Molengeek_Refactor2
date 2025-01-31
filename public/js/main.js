@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initNavbarToggle();  // Gestion du menu burger
+});
+
+function initNavbarToggle() {
   const hamburgerButton = document.getElementById('hamburgerButton');
   const navMenu = document.getElementById('navMenu');
 
   if (hamburgerButton && navMenu) {
+    // Ajouter un gestionnaire de clic pour afficher/masquer le menu
     hamburgerButton.addEventListener('click', () => {
       navMenu.classList.toggle('responsive');
     });
@@ -14,44 +19,64 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
-// Fonction initNavbarToggle() définie ici
-function initNavbarToggle() {
-  const hamburgerButton = document.getElementById('hamburgerButton');
-  const mobileMenu = document.querySelector('.navbar__menu');
-
-  if (hamburgerButton && mobileMenu) {
-    hamburgerButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('responsive');
-    });
-  }
 }
 
-// 2. FAQ Accordion
+
+// 2. Fonction pour gérer l'accordéon FAQ
 function initFAQAccordion() {
-  const faqAccordion = document.getElementById('faqAccordion');
-  if (faqAccordion) {
-    faqAccordion.querySelectorAll('.accordion-item').forEach(item => {
-      const button = item.querySelector('.accordion-button');
-      const collapse = item.querySelector('.accordion-collapse');
-      button.addEventListener('click', () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        faqAccordion.querySelectorAll('.accordion-item').forEach(otherItem => {
-          const otherButton = otherItem.querySelector('.accordion-button');
-          const otherCollapse = otherItem.querySelector('.accordion-collapse');
-          if (otherButton !== button) {
-            otherButton.setAttribute('aria-expanded', 'false');
-            otherCollapse.classList.remove('show');
-          }
-        });
-        button.setAttribute('aria-expanded', !isExpanded);
-        collapse.classList.toggle('show', !isExpanded);
-      });
+  const searchInput = document.getElementById('faqSearch');
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('h3').textContent.toLowerCase();
+      const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+      
+      if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+        item.style.display = 'block';
+        if (searchTerm) {
+          highlightText(item, searchTerm);
+        }
+      } else {
+        item.style.display = 'none';
+      }
     });
+  });
+  
+  // Animation des icônes et scroll
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(question => {
+    question.addEventListener('click', function() {
+      const icon = this.querySelector('.faq-icon');
+      icon.classList.toggle('active');
+      
+      // Smooth scroll to the clicked question
+      setTimeout(() => {
+        question.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
+    });
+  });
+
+  // Fonction de mise en surbrillance
+  function highlightText(element, term) {
+    const question = element.querySelector('h3');
+    const answer = element.querySelector('.faq-answer p');
+    
+    question.innerHTML = question.textContent.replace(
+      new RegExp(term, 'gi'),
+      match => `<mark>${match}</mark>`
+    );
+    
+    answer.innerHTML = answer.textContent.replace(
+      new RegExp(term, 'gi'),
+      match => `<mark>${match}</mark>`
+    );
   }
 }
 
-// 3. Gestion des vidéos
+// 3. Fonction pour gérer les vidéos
 function initVideoControls() {
   document.querySelectorAll('.video-container').forEach(container => {
     const video = container.querySelector('.testimonial-video');
@@ -60,7 +85,6 @@ function initVideoControls() {
     const stopButton = container.querySelector('.btn-stop');
     const poster = container.querySelector('.video-poster');
 
-    // Lancer la vidéo
     playButton?.addEventListener('click', () => {
       poster.style.display = 'none';
       playButton.style.display = 'none';
@@ -68,13 +92,11 @@ function initVideoControls() {
       video.play();
     });
 
-    // Activer/désactiver le son
     soundButton?.addEventListener('click', () => {
       video.muted = !video.muted;
       soundButton.textContent = video.muted ? '🔊' : '🔇';
     });
 
-    // Arrêter la vidéo
     stopButton?.addEventListener('click', () => {
       video.pause();
       video.currentTime = 0;
@@ -85,7 +107,7 @@ function initVideoControls() {
   });
 }
 
-// 4. Carousel gestion des éléments actifs
+// 4. Fonction pour gérer le carousel
 function initCarousel() {
   const carouselItems = document.querySelectorAll('.custom-carousel .item');
   carouselItems.forEach(item => {
@@ -95,9 +117,3 @@ function initCarousel() {
     });
   });
 }
-
-// Appel des fonctions
-initNavbarToggle();  // Gestion du menu burger
-initFAQAccordion();  // Gestion de l'accordéon FAQ
-initVideoControls(); // Gestion des vidéos
-initCarousel();      // Gestion du carousel

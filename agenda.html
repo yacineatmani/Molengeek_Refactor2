@@ -5,39 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
     <link rel="stylesheet" href="public/css/styles.css">
+  
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-gradient min-h-screen font-pocket">
-    <!-- Navbar -->
-   <!-- Navbar -->
-   <nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="navbar__brand">Molengeek</a>
-        
-        <!-- Menu hamburger pour petits écrans -->
-        <button id="hamburgerButton" class="navbar__toggle">
-            <div class="hamburger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
+<body class=" min-h-screen font-pocket">
+  
+     <!-- Navbar -->
 
-        <!-- Menu de navigation principal visible sur écrans larges et tablettes -->
-        <ul class="navbar__menu">
-            <li><a href="campus.html" class="nav-link">CAMPUS</a></li>
-            <li><a href="formation.html" class="nav-link">FORMATION</a></li>
-            <li><a href="coworking.html" class="nav-link">COWORKING</a></li>
-            <li><a href="agenda.html" class="nav-link">AGENDA</a></li>
-            <li><a href="propos.html" class="nav-link">À PROPOS</a></li>
-            <li><a href="presse.html" class="nav-link">PRESSE</a></li>
-            <li><a href="sidegeek.html" class="nav-link">SIDEGEEK</a></li>
-            <li><a href="job.html" class="nav-link">JOBS</a></li>
-        </ul>
-    </div>
-</nav>
+     <nav class="navbar">
+      <div class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo"></div>
+      
+      <button class="navbar__toggle" id="hamburgerButton">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html">CAMPUS</a></li>
+        <li><a href="formation.html">FORMATION</a></li>
+        <li><a href="coworking.html">COWORKING</a></li>
+        <li><a href="agenda.html">AGENDA</a></li>
+        <li><a href="a_propos.html">À PROPOS</a></li>
+        <li><a href="presse.html">PRESSE</a></li>
+        <li><a href="sidegeek.html">SIDEGEEK</a></li>
+        <li><a href="job.html">JOBS</a></li>
+      </ul>
+      
+    </nav>
 
 
 
@@ -46,6 +46,8 @@
         <img src="public/img/agenda.png" class="main-image" alt="Job Opportunities">
         <!-- Ajoutez ici le contenu spécifique à la page Agenda -->
     </section>
+
+    
     <!-- Agenda -->
 <section class="section">
     <div class="container">
@@ -119,12 +121,13 @@
     <div class="events-list mt-4">
       <ul class="list-unstyled">
         <li class="mb-4 p-3 border rounded shadow-sm">
-          <h3>Formation HTML - Niveau débutant</h3>
+          <h3>Formation <i class="fa-brands fa-html5" style="color: #be2358;"></i>HTML - Niveau débutant</h3>
           <p>Du 27/01 au 30/01</p>
+          
           <p>Détails : Introduction au HTML pour débutants...</p>
         </li>
         <li class="mb-4 p-3 border rounded shadow-sm">
-          <h3>Formation Réseaux Sociaux - Niveau débutant</h3>
+          <h3>Formation Réseaux <i class="fa-solid fa-hashtag" style="color: #be2358;"></i>Sociaux - Niveau débutant</h3>
           <p>Du 27/01 au 29/01</p>
           <p>Détails : Introduction aux réseaux sociaux pour débutants...</p>
         </li>
@@ -132,7 +135,7 @@
     </div>
   </section>
   
-  
+  <!-- section Direction -->
   <section id="about-us" class="container py-5">
     <h2 class="text-center mb-4">About Us</h2>
     <div class="team-grid row">
@@ -205,7 +208,8 @@
         </div>
       </div>
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script type="module" src="public/js/calendar.js"></script>
 </body>
 </html>
