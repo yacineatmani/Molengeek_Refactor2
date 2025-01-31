@@ -34,7 +34,7 @@ Ce projet est une refonte du site MolenGeek en utilisant **Sass** pour une meill
 4. Ouvrez `index.html` dans votre navigateur.
 
 ## Capture d’écran
-![Capture d’écran du site](./Molengeek_Refactor2/public/img/MolengeekRefactor.png)
+![Capture d’écran du site](public/img/MolengeekRefactor.png)
 
 ## Auteur
 ** Yacine Atmani** - [GitHub](https://github.com/yacineatmani)
