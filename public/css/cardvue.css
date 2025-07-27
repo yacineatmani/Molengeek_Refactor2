@@ -1,0 +1,49 @@
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.card[data-mouse-x] .card-bg {
+  transform: rotateX(calc(var(--mousePX) * 10deg)) rotateY(calc(var(--mousePY) * 10deg));
+}
+
+.card .card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card .card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .card-bg .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.card .card-bg .card-body .card-title {
+  font-size: 1.2rem;
+}
+
+.card .card-bg .card-body .card-text {
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=cardvue.css.map */
