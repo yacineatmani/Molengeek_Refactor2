@@ -1,66 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
-    <link rel="stylesheet" href="public/css/styles.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>À propos - MolenGeek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .navbar {
+            background-color: #1a2a44;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar__brand img {
+            height: 50px;
+        }
+        .navbar__toggle {
+            border: none;
+            background: transparent;
+        }
+        .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        .navbar__menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+        }
+        .navbar__menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar__menu li a:hover, .navbar__menu li a.active {
+            color: #00ddeb;
+        }
+        @media (max-width: 768px) {
+            .navbar__menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #1a2a44;
+                padding: 1rem;
+            }
+            .navbar__menu.active {
+                display: flex;
+            }
+        }
+        .section {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #1a2a44;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #00ddeb;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .main-image img {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .main-image p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-top: 1.5rem;
+        }
+        .footer {
+            background: #1a2a44;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #00ddeb;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<body class="bg-gradient min-h-screen font-pocket">
-     <!-- Navbar -->
-
-     <nav class="navbar">
-        <div class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo"></div>
-        
+<body>
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="public/img/molengeekLogo.png" alt="MolenGeek Logo" class="logo">
+        </div>
         <button class="navbar__toggle" id="hamburgerButton">
-          <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </button>
-      
         <ul class="navbar__menu" id="navMenu">
-          <li><a href="index.html">CAMPUS</a></li>
-          <li><a href="formation.html">FORMATION</a></li>
-          <li><a href="coworking.html">COWORKING</a></li>
-          <li><a href="agenda.html">AGENDA</a></li>
-          <li><a href="a_propos.html">À PROPOS</a></li>
-          <li><a href="presse.html">PRESSE</a></li>
-          <li><a href="sidegeek.html">SIDEGEEK</a></li>
-          <li><a href="job.html">JOBS</a></li>
+            <li><a href="index.html">CAMPUS</a></li>
+            <li><a href="formation.html">FORMATION</a></li>
+            <li><a href="coworking.html">COWORKING</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="a_propos.html" class="active">À PROPOS</a></li>
+            <li><a href="presse.html">PRESSE</a></li>
+            <li><a href="sidegeek.html">SIDEGEEK</a></li>
+            <li><a href="job.html">JOBS</a></li>
         </ul>
-        
-      </nav>
+    </nav>
 
-
-    <!-- Présentation -->
     <section class="section">
         <div class="main-image">
-            <img src="public/img/Apropos.jpg" class="img-fluid w-100 mb-4" alt="Job Opportunities">
-            <h2 class="section-title">A propos de molengeek</h2>
-            <p>MolenGeek est un écosystème technologique qui rends les technologies accessibles à tous, indépendamment de leur formation académique ou de leur expérience. Cette initiative repose sur trois piliers clés : l’incubateur, les formations en technologies de l’information et les événements inspirants.
-
-                Les formations offertes par MolenGeek couvrent un large éventail de domaines technologiques, de la programmation informatique à la cybersécurité, en passant par le marketing digital et l’intelligence artificielle. Ces programmes visent à renforcer les compétences des chercheurs d’emploi et à les préparer à des carrières prometteuses dans le secteur technologique.
-                
-                L’incubateur de MolenGeek apporte un soutien concret aux entrepreneurs en herbe en leur fournissant des ressources, des mentors expérimentés et un environnement propice à la croissance de leurs startups.
-                
-                Les événements organisés par MolenGeek, tels que les hackathons, favorisent la créativité, l’innovation et l’apprentissage collaboratif au sein de la communauté technologique. 
-                
-                MolenGeek est bien plus qu’un espace de travail partagé, c’est un acteur majeur dans la démocratisation de la technologie, permettant à des individus de tous horizons de développer leurs compétences, de créer des entreprises innovantes et de célébrer leur passion pour la technologie lors d’événements stimulants.</p>
+            <img src="public/img/Apropos.jpg" class="img-fluid w-100 mb-4" alt="À propos de MolenGeek">
+            <h2 class="section-title text-center">À propos de MolenGeek</h2>
+            <p>MolenGeek est un écosystème technologique qui rend les technologies accessibles à tous, indépendamment de leur formation académique ou de leur expérience. Cette initiative repose sur trois piliers clés : l’incubateur, les formations en technologies de l’information et les événements inspirants.</p>
+            <p>Les formations offertes par MolenGeek couvrent un large éventail de domaines technologiques, de la programmation informatique à la cybersécurité, en passant par le marketing digital et l’intelligence artificielle. Ces programmes visent à renforcer les compétences des chercheurs d’emploi et à les préparer à des carrières prometteuses dans le secteur technologique.</p>
+            <p>L’incubateur de MolenGeek apporte un soutien concret aux entrepreneurs en herbe en leur fournissant des ressources, des mentors expérimentés et un environnement propice à la croissance de leurs startups.</p>
+            <p>Les événements organisés par MolenGeek, tels que les hackathons, favorisent la créativité, l’innovation et l’apprentissage collaboratif au sein de la communauté technologique.</p>
+            <p>MolenGeek est bien plus qu’un espace de travail partagé, c’est un acteur majeur dans la démocratisation de la technologie, permettant à des individus de tous horizons de développer leurs compétences, de créer des entreprises innovantes et de célébrer leur passion pour la technologie lors d’événements stimulants.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; Copyright <span class="text-dark fw-bold">MolenGeek</span>. All Rights Reserved</p>
-            <p>Designed by <span class="text-primary fw-bold">MolenGeek</span></p>
+            <p>&copy; Copyright <span class="fw-bold">MolenGeek</span>. Tous droits réservés.</p>
+            <p>Conçu par <a href="#" class="fw-bold">MolenGeek</a></p>
         </div>
     </footer>
-    
-    <script type="module" src="public/js/main.js"></script>
-</body>
-</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('hamburgerButton').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>

@@ -18,20 +18,29 @@ Ce projet est une refonte du site MolenGeek en utilisant **Sass** pour une meill
 ✅ **Utilisation de Bootstrap** pour une meilleure mise en page
 ✅ **Ajout d'icônes avec Font Awesome**
 
-## Installation
+## Installation et Développement Local
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-repo/molengeek-refactor.git
+   git clone https://github.com/yacineatmani/Molengeek_Refactor2.git
    ```
 2. Installez les dépendances :
    ```bash
    npm install
    ```
-3. Compilez le Sass :
+3. Lancez le serveur de développement :
+   ```bash
+   npm run dev
+   ```
+   Le site sera accessible sur http://localhost:8080
+
+4. Compilez le Sass (si nécessaire) :
    ```bash
    npm run sass
    ```
-4. Ouvrez `index.html` dans votre navigateur.
+
+## Déploiement GitHub Pages
+Ce site est automatiquement déployé sur GitHub Pages à chaque push sur la branche `main`.
+🌐 **Site en ligne** : https://yacineatmani.github.io/Molengeek_Refactor2/
 
 ## Capture d’écran
 ![Capture d’écran du site](public/img/MolengeekRefactor.png)

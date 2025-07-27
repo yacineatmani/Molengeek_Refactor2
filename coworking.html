@@ -1,148 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation - MolenGeek</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
-   
-     <!-- Navbar -->
-
-     <nav class="navbar">
-        <div class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo"></div>
-        
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="public/img/molengeekLogo.png" alt="MolenGeek Logo" class="logo">
+        </div>
         <button class="navbar__toggle" id="hamburgerButton">
-          <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </button>
-      
         <ul class="navbar__menu" id="navMenu">
-          <li><a href="index.html">CAMPUS</a></li>
-          <li><a href="formation.html">FORMATION</a></li>
-          <li><a href="coworking.html">COWORKING</a></li>
-          <li><a href="agenda.html">AGENDA</a></li>
-          <li><a href="a_propos.html">À PROPOS</a></li>
-          <li><a href="presse.html">PRESSE</a></li>
-          <li><a href="sidegeek.html">SIDEGEEK</a></li>
-          <li><a href="job.html">JOBS</a></li>
+            <li><a href="index.html">CAMPUS</a></li>
+            <li><a href="formation.html" class="active">FORMATION</a></li>
+            <li><a href="coworking.html">COWORKING</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="a_propos.html">À PROPOS</a></li>
+            <li><a href="presse.html">PRESSE</a></li>
+            <li><a href="sidegeek.html">SIDEGEEK</a></li>
+            <li><a href="job.html">JOBS</a></li>
         </ul>
-        
-      </nav>
+    </nav>
 
     <!-- Main Content -->
     <main class="container mt-5 pt-5">
-        <!-- Section 1: Présentation des activités Molengeek -->
+        <!-- Carrousel Bootstrap -->
+        <section class="section py-5">
+            <div class="container">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./public/img/Marketing.png" class="d-block w-100" alt="Marketing">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./public/img/image-3.png" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./public/img/image-4.png" class="d-block w-100" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./public/img/miniature.png" class="d-block w-100" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./public/img/webDev.png" class="d-block w-100" alt="Web Development">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Présentation des activités Molengeek -->
         <section class="my-5">
             <h2 class="section-title text-center">Nos Activités</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
+            <div class="row g-4">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/coworking.jpg" class="card-img-top" alt="Coworking">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-users fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Coworking</h5>
                             <p class="card-text">Un espace de travail partagé pour les entrepreneurs et freelances.</p>
+                            <p class="card-text small">Rejoins une communauté dynamique avec des bureaux modernes, des salles de réunion équipées et un accès à des événements networking exclusifs.</p>
                             <a href="agenda.html" class="btn btn-primary mt-3">Réservez votre espace</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/collaboration.png" class="card-img-top" alt="Formations">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-graduation-cap fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Formations</h5>
                             <p class="card-text">Des formations en technologie pour tous les niveaux.</p>
+                            <p class="card-text small">Apprends des compétences en développement web, marketing digital ou IA avec des cours pratiques adaptés aux débutants et aux professionnels.</p>
                             <a href="#formations" class="btn btn-primary">Voir les formations</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/image-8.png" class="card-img-top" alt="Événements">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-calendar-alt fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Événements</h5>
                             <p class="card-text">Des événements inspirants pour la communauté technologique.</p>
+                            <p class="card-text small">Participe à des ateliers, hackathons et conférences pour booster tes compétences et élargir ton réseau professionnel.</p>
                             <a href="agenda.html" class="btn btn-primary">Voir l'agenda</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-       
-
-    <!-- Carrousel Bootstrap -->
-    <section class="section py-5">
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
         <div class="container">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./public/img/Marketing.png" class="d-block w-100" alt="Image 1">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="social-icons mb-3 d-flex justify-content-center gap-3">
+                        <a href="https://facebook.com" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" class="text-white"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./public/img/image-3.png" class="d-block w-100" alt="Image 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./public/img/image-4.png" class="d-block w-100" alt="Image 3">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./public/img/miniature.png" class="d-block w-100" alt="Image 4">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./public/img/webDev.png" class="d-block w-100" alt="Image 5">
-                    </div>
+                    <p class="mb-1">© Copyright <span class="fw-bold">MolenGeek</span>. Tous droits réservés.</p>
+                    <p class="small">Conçu par <a href="#" class="text-primary">MolenGeek</a></p>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-    </section>
-      
-    <!-- Footer -->
-<footer class="text-white py-4" style="background-color: var(--secondary);">
-    <div class="container">
-      <div class="row">
-        <!-- Réseaux Sociaux -->
-        <div class="col-12 text-center mb-3">
-          <div class="social-icons d-flex justify-content-center gap-3">
-            <a href="https://facebook.com" class="text-white text-decoration-none">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://twitter.com" class="text-white text-decoration-none">
-              <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://instagram.com" class="text-white text-decoration-none">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
-  
-        <!-- Copyright et Crédit -->
-        <div class="col-12 text-center">
-          <p class="mb-1">
-            &copy; <span class="fw-bold">MolenGeek</span>. Tous droits réservés.
-          </p>
-          <p class="small">
-            Designed by <span class="fw-bold">MolenGeek</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="public/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#hamburgerButton').click(function () {
+                $('#navMenu').toggleClass('responsive');
+            });
+        });
+    </script>
 </body>
 </html>

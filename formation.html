@@ -1,238 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MolenGeek - Coding ADO 15-18 ans</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="public/css/styles.css">
-        <style>body {
-            background-color: rgb(83, 172, 235); /* Choisis une couleur de fond qui est moins intrusif */
-          }
-          </style>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations - MolenGeek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="public/css/styles.css">
+    <style>
+        /* Réduction de la taille des images des cartes de formation */
+        .formation-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
         
-        </head>
+        /* Réduction de la taille des images des cartes d'activité */
+        .activity-card .card-img-top {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* Amélioration générale des cartes */
+        .formation-card, .activity-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .formation-card:hover, .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Style pour la vidéo de la bannière */
+        .banner video {
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
 <body>
- <!-- Navbar -->
- <nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo"></a>            
-        <!-- Menu hamburger pour petits écrans -->
-        <button id="hamburgerButton" class="navbar__toggle">
-            <div class="hamburger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="MolenGeek Logo" class="logo"></a>
+            <button class="navbar__toggle" id="hamburgerButton">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="index.html">CAMPUS</a></li>
+                <li><a href="formation.html" class="active">FORMATION</a></li>
+                <li><a href="coworking.html">COWORKING</a></li>
+                <li><a href="agenda.html">AGENDA</a></li>
+                <li><a href="a_propos.html">À PROPOS</a></li>
+                <li><a href="presse.html">PRESSE</a></li>
+                <li><a href="sidegeek.html">SIDEGEEK</a></li>
+                <li><a href="job.html">JOBS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Bannière avec vidéo -->
+    <section class="section banner py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="section-title">Nos Formations</h1>
+                    <p class="lead">
+                        MolenGeek propose des formations courtes et longues en technologie, du développement web au marketing digital, pour tous les niveaux.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="ratio ratio-16x9">
+                        <video autoplay loop muted playsinline>
+                            <source src="public/video/3Fromage.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                </div>
             </div>
-        </button>
+        </div>
+    </section>
 
-        <!-- Menu de navigation principal visible sur écrans larges et tablettes -->
-        <ul class="navbar__menu" id="navMenu">
-            <li><a href="index.html" >CAMPUS</a></li>
-            <li><a href="formation.html" >FORMATION</a></li>
-            <li><a href="coworking.html" >COWORKING</a></li>
-            <li><a href="agenda.html" >AGENDA</a></li>
-            <li><a href="a_propos.html">À PROPOS</a></li>
-            <li><a href="presse.html" >PRESSE</a></li>
-            <li><a href="sidegeek.html">SIDEGEEK</a></li>
-            <li><a href="job.html" >JOBS</a></li>
-          </ul>
-          
-    </div>
-</nav>
-
-<!-- Présentation -->
-<section class="presentation-section">
-    <div class="presentation-container">
-      <div class="video-wrapper">
-        <button class="sound-toggle" data-video="video1">🔊</button>
-        <video id="video1" autoplay loop muted playsinline>
-          <source src="public/video/3Fromage.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la balise vidéo.
-        </video>
-      </div>
-    </div>
-  </section>
-
- 
-        <!-- Section 1: Présentation des activités Molengeek -->
-        <section class="my-5">
-            <h2 class="section-title text-center">Nos Activités</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
+    <!-- Nos Activités -->
+    <section class="section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nos Activités</h2>
+            <div class="row g-4">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/coworking.jpg" class="card-img-top" alt="Coworking" loading="lazy">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-users fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Coworking</h5>
                             <p class="card-text">Un espace de travail partagé pour les entrepreneurs et freelances.</p>
-                            <a href="#" class="btn btn-primary mt-3">Réservez votre espace</a>
-
+                            <p class="card-text small">Rejoins une communauté dynamique avec des bureaux modernes et des événements networking.</p>
+                            <a href="agenda.html" class="btn btn-primary mt-3">Réservez votre espace</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/cmo.jpg" class="card-img-top" alt="Formations" loading="lazy">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-graduation-cap fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Formations</h5>
                             <p class="card-text">Des formations en technologie pour tous les niveaux.</p>
+                            <p class="card-text small">Apprends le développement web, l’IA, ou le marketing digital avec des cours pratiques.</p>
                             <a href="#formations" class="btn btn-primary">Voir les formations</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg activity-card">
                         <img src="public/img/event.jpg" class="card-img-top" alt="Événements" loading="lazy">
                         <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-calendar-alt fa-2x text-white"></i>
+                            </div>
                             <h5 class="card-title">Événements</h5>
                             <p class="card-text">Des événements inspirants pour la communauté technologique.</p>
+                            <p class="card-text small">Participe à des hackathons et conférences pour booster tes compétences.</p>
                             <a href="agenda.html" class="btn btn-primary">Voir l'agenda</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
- 
-<!-- Section 3: Formations courtes et longues -->
-<!-- Section 3: Formations courtes et longues -->
-<section id="formations" class="container my-5 formations-section">
-    <div class="row">
-        <!-- Colonne Formations courtes -->
-        <div class="col-md-6">
-            <h3 class="mb-4" style="color: var(--dark)">Formations courtes</h3>
-            
-            <!-- Photoshop -->
-            <div class="card mb-4 ">
-                <img src="public/img/photoshop.jpg" class="card-img-top" alt="Photoshop">
-                <div class="card-body">
-                    <h5 class="card-title" style="color: var(--primary)">
-                        <img src="public/img/adobe-photoshop.png" alt="Logo Photoshop" class="card-icon"> Photoshop
-                    </h5>
-                    <p class="card-text">Grâce à Photoshop, tu pourras maîtriser un outil indispensable dans le monde du design, de la création graphique et artistique.</p>
-                    <p class="text-muted">Prochaines dates : 10/02 - 13/02</p>
-                    <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+    <!-- Formations courtes et longues -->
+    <section id="formations" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nos Formations</h2>
+            <div class="row">
+                <!-- Formations courtes -->
+                <div class="col-md-6">
+                    <h3 class="mb-4">Formations courtes</h3>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/photoshop.jpg" class="card-img-top" alt="Photoshop" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-paint-brush fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Photoshop</h5>
+                            <p class="card-text">Maîtrise un outil clé pour le design graphique et artistique.</p>
+                            <p class="card-text small">Prochaines dates : 10/02 - 13/02</p>
+                            <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/premierepro.png" class="card-img-top" alt="Premiere Pro" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-video fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Premiere Pro</h5>
+                            <p class="card-text">Apprends le montage vidéo professionnel pour demandeurs d'emploi.</p>
+                            <p class="card-text small">Prochaines dates : 03/02 - 06/02</p>
+                            <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/wordpress.jpg" class="card-img-top" alt="WordPress" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fab fa-wordpress fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">WordPress</h5>
+                            <p class="card-text">Crée des sites web en 3 jours, aucune expérience requise.</p>
+                            <p class="card-text small">Prochaines dates : À venir</p>
+                            <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/reseau.jpg" class="card-img-top" alt="Réseaux Sociaux" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-share-alt fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Réseaux Sociaux</h5>
+                            <p class="card-text">Sponsorise tes posts et cible la bonne audience.</p>
+                            <p class="card-text small">Prochaines dates : À venir</p>
+                            <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Premiere Pro -->
-            <div class="card mb-4 ">
-                <img src="public/img/premierepro.png" class="card-img-top" alt="Premiere Pro">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/premiere-pro.png" alt="Logo Premiere Pro" class="card-icon"> Premiere Pro
-                    </h5>
-                    <p class="card-text">Formation pour demandeurs d'emploi. Le montage vidéo t'intéresse ? La formation Premiere Pro est faite pour toi !</p>
-                    <p class="text-muted">Prochaines dates : 03/02 - 06/02</p>
-                    <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
-                </div>
-            </div>
-
-            <!-- WordPress -->
-            <div class="card mb-4 ">
-                <img src="public/img/wordpress.jpg" class="card-img-top" alt="WordPress">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/wordpress.png" alt="Logo WordPress" class="card-icon"> WordPress
-                    </h5>
-                    <p class="card-text">Tu veux apprendre à créer des sites web ? Nous te proposons une formation courte mais complète de 3 jours.</p>
-                    <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
-                </div>
-            </div>
-
-            <!-- Réseaux Sociaux -->
-            <div class="card mb-4 ">
-                <img src="public/img/reseau.jpg" class="card-img-top" alt="Réseaux Sociaux">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/des-medias-sociaux.png" alt="Logo Réseaux Sociaux" class="card-icon"> Réseaux Sociaux
-                    </h5>
-                    <p class="card-text">Apprends à sponsoriser tes postes et à toucher la bonne audience. Formation pour particuliers et entreprises.</p>
-                    <a href="#" class="btn btn-primary mt-auto">Je m'inscris !</a>
+                <!-- Formations longues -->
+                <div class="col-md-6">
+                    <h3 class="mb-4">Formations longues</h3>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/webDev.png" class="card-img-top" alt="Web Developer" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-code fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Web Developer</h5>
+                            <p class="card-text">Devient expert en codage en 7 mois, aucun prérequis.</p>
+                            <p class="card-text small">Prochaines dates : À venir</p>
+                            <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/data.jpg" class="card-img-top" alt="Data Analyst" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-chart-bar fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">IA</h5>
+                            <p class="card-text">Maîtrise Python, Machine Learning, et Deep Learning en 7 mois.</p>
+                            <p class="card-text small">Prochaines dates : À venir</p>
+                            <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 border-0 shadow-lg formation-card">
+                        <img src="public/img/digitalmarket.jpg" class="card-img-top" alt="Digital Marketing" loading="lazy">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-bullhorn fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Digital Marketing</h5>
+                            <p class="card-text">Développe des compétences en stratégie digitale en 6 mois.</p>
+                            <p class="card-text small">Prochaines dates : À venir</p>
+                            <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Colonne Formations longues -->
-        <div class="col-md-6">
-            <h3 class="mb-4">Formations longues</h3>
-
-            <!-- Web Developer -->
-            <div class="card mb-4 ">
-                <img src="public/img/webDev.png" class="card-img-top" alt="Web Developer">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/software-development.png" alt="Logo Web Dev" class="card-icon"> Web Developer
-                    </h5>
-                    <p class="card-text">Formation développeur web de 7 mois intensifs qui te transformera en expert du codage. Aucun prérequis nécessaire.</p>
-                    <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- Data Analyst -->
-            <div class="card mb-4 ">
-                <img src="public/img/data.jpg" class="card-img-top" alt="Data Analyst">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/ia.png" alt="Logo IA" class="card-icon"> IA
-                    </h5>
-                    <p class="card-text">Formation de 7 mois : Python, Machine Learning, Deep Learning. Deviens expert en analyse de données.</p>
-                    <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
-                </div>
-            </div>
-
-            <!-- Digital Marketing -->
-            <div class="card mb-4 ">
-                <img src="public/img/digitalmarket.jpg" class="card-img-top" alt="Digital Marketing">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <img src="public/img/digital-marketing.png" alt="Logo Digital Marketing" class="card-icon"> Digital Marketing
-                    </h5>
-                    <p class="card-text">Formation marketing digital en 6 mois. Développe tes compétences en stratégie digitale et médias sociaux.</p>
-                    <a href="#" class="btn btn-primary mt-auto">En savoir plus</a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="social-icons mb-3 d-flex justify-content-center gap-3">
+                        <a href="https://facebook.com" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-1">© Copyright <span class="fw-bold">MolenGeek</span>. Tous droits réservés.</p>
+                    <p class="small">Conçu par <a href="#" class="text-primary">MolenGeek</a></p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-
-
-<!-- Footer -->
-<footer class="text-white py-4" style="background-color: var(--secondary);">
-    <div class="container">
-      <div class="row">
-        <!-- Réseaux Sociaux -->
-        <div class="col-12 text-center mb-3">
-          <div class="social-icons d-flex justify-content-center gap-3">
-            <a href="https://facebook.com" class="text-white text-decoration-none">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://twitter.com" class="text-white text-decoration-none">
-              <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://instagram.com" class="text-white text-decoration-none">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
-  <!-- Copyright et Crédit -->
-        <div class="col-12 text-center">
-          <p class="mb-1">
-            &copy; <span class="fw-bold">MolenGeek</span>. Tous droits réservés.
-          </p>
-          <p class="small">
-            Designed by <span class="fw-bold">MolenGeek</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  
-    </footer> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script type="module" src="public/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#hamburgerButton').click(function () {
+                $('#navMenu').toggleClass('responsive');
+            });
+        });
+    </script>
 </body>
 </html>

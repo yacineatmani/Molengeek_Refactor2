@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - MolenGeek</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient min-h-screen font-pocket">
+     <!-- Navbar -->
+     <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo">
+        </div>
+        
+        <button class="navbar__toggle" id="hamburgerButton">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="index.html">CAMPUS</a></li>
+          <li><a href="formation.html">FORMATION</a></li>
+          <li><a href="coworking.html">COWORKING</a></li>
+          <li><a href="agenda.html">AGENDA</a></li>
+          <li><a href="a_propos.html" class="active">À PROPOS</a></li>
+          <li><a href="presse.html">PRESSE</a></li>
+          <li><a href="sidegeek.html">SIDEGEEK</a></li>
+          <li><a href="job.html">JOBS</a></li>
+        </ul>
+      </nav>
+
+    <!-- Présentation -->
+    <section class="section" style="margin-top: 100px; padding: 2rem 0;">
+        <div class="container">
+            <!-- Hero Image avec overlay -->
+            <div class="position-relative mb-5">
+                <img src="public/img/Apropos.jpg" class="img-fluid w-100" alt="À propos de MolenGeek" 
+                     style="border-radius: 15px; height: 400px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" 
+                     style="background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)); border-radius: 15px;">
+                    <div class="text-center text-white">
+                        <h1 class="display-3 fw-bold mb-3">À propos de MolenGeek</h1>
+                        <p class="lead fs-4">Démocratiser la technologie pour tous</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description principale -->
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-5">
+                        <h2 class="h3 mb-4" style="color: #667eea;">Notre Mission</h2>
+                        <p class="lead fs-5" style="line-height: 1.8;">
+                            MolenGeek est un <strong>écosystème technologique innovant</strong> qui rend les technologies 
+                            accessibles à tous, indépendamment de leur formation académique ou de leur expérience. 
+                            Notre initiative repose sur trois piliers fondamentaux qui transforment des vies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trois piliers avec cards modernes -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-lg" style="transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+                            <div class="mb-4">
+                                <i class="fas fa-graduation-cap fa-4x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Formations d'Excellence</h3>
+                            <p class="mb-0">
+                                Programmes complets couvrant la programmation, cybersécurité, marketing digital, 
+                                et intelligence artificielle. Des formations qui préparent aux carrières d'avenir 
+                                dans le secteur technologique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-lg" style="transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 15px;">
+                            <div class="mb-4">
+                                <i class="fas fa-rocket fa-4x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Incubateur Startup</h3>
+                            <p class="mb-0">
+                                Soutien concret aux entrepreneurs avec des ressources expertes, 
+                                mentors expérimentés et un environnement propice à la croissance 
+                                de startups innovantes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="card h-100 border-0 shadow-lg" style="transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="card-body p-4 text-center" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 15px;">
+                            <div class="mb-4">
+                                <i class="fas fa-users fa-4x"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Événements Tech</h3>
+                            <p class="mb-0">
+                                Hackathons et événements qui favorisent la créativité, l'innovation 
+                                et l'apprentissage collaboratif au sein de notre communauté technologique 
+                                dynamique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section impact avec statistiques -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="text-center p-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; color: white;">
+                        <h3 class="h2 mb-4">Notre Impact</h3>
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="h1 fw-bold" style="font-size: 3rem;">500+</div>
+                                <p class="mb-0 fs-5">Étudiants formés</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="h1 fw-bold" style="font-size: 3rem;">50+</div>
+                                <p class="mb-0 fs-5">Startups incubées</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="h1 fw-bold" style="font-size: 3rem;">100+</div>
+                                <p class="mb-0 fs-5">Événements organisés</p>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <div class="h1 fw-bold" style="font-size: 3rem;">85%</div>
+                                <p class="mb-0 fs-5">Taux d'emploi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message de conclusion avec CTA -->
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center p-5" style="background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                        <h3 class="h2 mb-4" style="color: #667eea;">Plus qu'un espace de coworking</h3>
+                        <p class="lead mb-4" style="line-height: 1.8;">
+                            <strong>MolenGeek est un acteur majeur dans la démocratisation de la technologie</strong>, 
+                            permettant à des individus de tous horizons de développer leurs compétences, 
+                            de créer des entreprises innovantes et de célébrer leur passion pour la technologie 
+                            lors d'événements stimulants.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="formation.html" class="btn btn-lg px-4 py-3" 
+                               style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 50px; color: white; text-decoration: none; transition: all 0.3s ease;"
+                               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(102, 126, 234, 0.4)'"
+                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <i class="fas fa-graduation-cap me-2"></i>Découvrir nos formations
+                            </a>
+                            <a href="job.html" class="btn btn-lg px-4 py-3" 
+                               style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border: none; border-radius: 50px; color: white; text-decoration: none; transition: all 0.3s ease;"
+                               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(240, 147, 251, 0.4)'"
+                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <i class="fas fa-briefcase me-2"></i>Opportunités d'emploi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Copyright <span class="text-dark fw-bold">MolenGeek</span>. All Rights Reserved</p>
+            <p>Designed by <span class="text-primary fw-bold">MolenGeek</span></p>
+        </div>
+    </footer>
+    
+    <script type="module" src="public/js/main.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

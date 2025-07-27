@@ -11,34 +11,23 @@
     <link rel="stylesheet" href="public/css/styles.css">
     <style>
         .job-card {
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
             min-height: 300px;
             border-radius: 15px;
-            overflow: hidden;
-            color: white;
+            position: relative;
             display: flex;
-            align-items: flex-end;
-        }
-        .job-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-            z-index: 1;
+            align-items: end;
+            overflow: hidden;
         }
         .job-card .item-desc {
-            position: relative;
-            z-index: 2;
+            background: rgba(0,0,0,0.7);
+            color: white;
             padding: 20px;
+            border-radius: 0 0 15px 15px;
             width: 100%;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            margin: 0;
         }
         .job-card .item-desc h3 {
             color: white;
@@ -46,8 +35,47 @@
             margin-bottom: 10px;
         }
         .job-card .item-desc p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 5px;
+            color: white;
+            margin-bottom: 8px;
+        }
+        
+        /* FAQ Styling */
+        .faq-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+        .faq-container .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .faq-container .accordion-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .faq-container .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: none;
+        }
+        .faq-container .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+        .faq-container .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        .faq-container .accordion-body {
+            background: white;
+            padding: 20px;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -136,88 +164,104 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section bg-light py-5">
+    <section class="faq-section py-5">
         <div class="container">
-            <h2 class="section-title text-center mb-4">Questions Fréquemment Posées</h2>
+            <h2 class="section-title text-center mb-5 text-white">Questions Fréquemment Posées</h2>
             <div class="accordion faq-container" id="faqAccordion">
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Qu'est-ce que MolenGeek ?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">MolenGeek soutient les jeunes dans leurs projets technologiques et entrepreneuriaux.</div>
+                        <div class="accordion-body">
+                            <strong>MolenGeek</strong> est un écosystème d'innovation qui soutient les jeunes dans leurs projets technologiques et entrepreneuriaux. Nous proposons des formations, un espace de coworking et un accompagnement personnalisé pour développer vos compétences numériques.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Comment rejoindre MolenGeek ?
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Inscris-toi à nos programmes ou participe à nos événements.</div>
+                        <div class="accordion-body">
+                            Pour rejoindre MolenGeek, tu peux t'inscrire à nos programmes de formation ou participer à nos événements. Consulte notre page d'inscription ou contacte-nous directement pour plus d'informations sur les modalités d'admission.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Quels types de formations ?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Formations longues et courtes en technologie et entrepreneuriat.</div>
+                        <div class="accordion-body">
+                            Nous proposons des <strong>formations longues</strong> (Web Developer, Marketing Digital, Intelligence Artificielle) et des <strong>formations courtes</strong> (Photoshop, Premiere Pro, WordPress, Réseaux Sociaux) adaptées à tous les niveaux.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             Quel est le planning des formations ?
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Consulte le programme sur la page d'accueil.</div>
+                        <div class="accordion-body">
+                            Le planning des formations est disponible sur notre page d'accueil et sur notre agenda. Les sessions démarrent régulièrement tout au long de l'année. Contacte-nous pour connaître les prochaines dates disponibles.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Faut-il des pré-requis pour s’inscrire ?
+                            Faut-il des pré-requis pour s'inscrire ?
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Aucun prérequis n’est requis.</div>
+                        <div class="accordion-body">
+                            <strong>Aucun prérequis technique n'est requis !</strong> Nos formations sont conçues pour accueillir des débutants. Seules la motivation et l'envie d'apprendre sont nécessaires pour rejoindre nos programmes.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Puis-je m’inscrire si je ne suis pas demandeur d’emploi ?
+                            Puis-je m'inscrire si je ne suis pas demandeur d'emploi ?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Contacte-nous pour un devis.</div>
+                        <div class="accordion-body">
+                            Bien sûr ! Si tu n'es pas demandeur d'emploi, tu peux quand même suivre nos formations. Contacte-nous pour recevoir un devis personnalisé adapté à ta situation.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            Quelles formations pour les non-demandeurs d’emploi ?
+                            Quelles formations pour les non-demandeurs d'emploi ?
                         </button>
                     </h2>
                     <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Formations courtes accessibles. Contacte-nous pour plus d’infos.</div>
+                        <div class="accordion-body">
+                            Pour les non-demandeurs d'emploi, nous proposons principalement les <strong>formations courtes</strong> qui sont plus flexibles. Contacte-nous pour discuter des options disponibles selon tes besoins et ta disponibilité.
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item faq-item">
+                <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                             Combien coûtent les formations ?
                         </button>
                     </h2>
                     <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body faq-answer">Gratuit pour demandeurs d’emploi (chèques Tic Actiris). Contacte-nous pour un devis sinon.</div>
+                        <div class="accordion-body">
+                            Les formations sont <strong>gratuites pour les demandeurs d'emploi</strong> grâce aux chèques TIC d'Actiris. Pour les autres profils, nous proposons des tarifs préférentiels. Contacte-nous pour recevoir un devis détaillé.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,8 +298,8 @@
                 <div class="item job-card" data-bg="public/img/CTO.jpg">
                     <div class="item-desc">
                         <h3>CTO</h3>
-                        <p>Rôle clé dans l’évolution technologique de l’organisation.</p>
-                        <p class="small">Dirige l’innovation technologique, supervise le développement des projets et façonne l’avenir numérique de MolenGeek.</p>
+                        <p>Rôle clé dans l'évolution technologique de l'organisation.</p>
+                        <p class="small">Dirige l'innovation technologique, supervise le développement des projets et façonne l'avenir numérique de MolenGeek.</p>
                     </div>
                 </div>
                 <div class="item job-card" data-bg="public/img/cmo.jpg">
@@ -338,7 +382,12 @@
             });
             $('.job-card').each(function() {
                 const bg = $(this).data('bg');
-                $(this).css('background-image', `url(${bg})`);
+                $(this).css({
+                    'background-image': `url(${bg})`,
+                    'background-size': 'cover',
+                    'background-position': 'center',
+                    'background-repeat': 'no-repeat'
+                });
             });
         });
     </script>

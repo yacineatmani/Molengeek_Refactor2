@@ -8,9 +8,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "http-server . -p 8080 -o",
+    "dev": "http-server . -p 8080 -o",
+    "sass": "sass --watch src/sass/styles.sass:public/css/styles.css",
+    "sass:build": "sass src/sass/styles.sass:public/css/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }

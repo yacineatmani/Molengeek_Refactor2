@@ -1,91 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
-    <link rel="stylesheet" href="public/css/styles.css">
-    <!-- Bootstrap CSS -->
+    <title>Presse - MolenGeek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="public/css/styles.css">
 </head>
-<body class="bg-gradient min-h-screen font-pocket">
-      <!-- Navbar -->
-
-      <nav class="navbar">
-        <div class="navbar__brand"><img src="public/img/molengeekLogo.png" alt="Molengeek Logo" class="logo"></div>
-        
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="public/img/molengeekLogo.png" alt="MolenGeek Logo" class="logo">
+        </div>
         <button class="navbar__toggle" id="hamburgerButton">
-          <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </button>
-      
         <ul class="navbar__menu" id="navMenu">
-          <li><a href="index.html">CAMPUS</a></li>
-          <li><a href="formation.html">FORMATION</a></li>
-          <li><a href="coworking.html">COWORKING</a></li>
-          <li><a href="agenda.html">AGENDA</a></li>
-          <li><a href="a_propos.html">À PROPOS</a></li>
-          <li><a href="presse.html">PRESSE</a></li>
-          <li><a href="sidegeek.html">SIDEGEEK</a></li>
-          <li><a href="job.html">JOBS</a></li>
+            <li><a href="index.html">CAMPUS</a></li>
+            <li><a href="formation.html">FORMATION</a></li>
+            <li><a href="coworking.html">COWORKING</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="a_propos.html">À PROPOS</a></li>
+            <li><a href="presse.html" class="active">PRESSE</a></li>
+            <li><a href="sidegeek.html">SIDEGEEK</a></li>
+            <li><a href="job.html">JOBS</a></li>
         </ul>
-        
-      </nav>
+    </nav>
 
-
-    <!-- Présentation -->
-    <section class="section">
+    <!-- Bannière -->
+    <section class="section banner py-5 bg-primary text-white">
         <div class="container">
-            <img src="public/img/press.png" class="img-fluid w-100 h-50 mb-4" alt="Job Opportunities">
-            <h2 class="section-title">A propos de molengeek</h2>
-            <p>MolenGeek est un écosystème technologique qui rends les technologies accessibles à tous, indépendamment de leur formation académique ou de leur expérience. Cette initiative repose sur trois piliers clés : l’incubateur, les formations en technologies de l’information et les événements inspirants.
-
-                Les formations offertes par MolenGeek couvrent un large éventail de domaines technologiques, de la programmation informatique à la cybersécurité, en passant par le marketing digital et l’intelligence artificielle. Ces programmes visent à renforcer les compétences des chercheurs d’emploi et à les préparer à des carrières prometteuses dans le secteur technologique.
-                
-                L’incubateur de MolenGeek apporte un soutien concret aux entrepreneurs en herbe en leur fournissant des ressources, des mentors expérimentés et un environnement propice à la croissance de leurs startups.
-                
-                Les événements organisés par MolenGeek, tels que les hackathons, favorisent la créativité, l’innovation et l’apprentissage collaboratif au sein de la communauté technologique. 
-                
-                MolenGeek est bien plus qu’un espace de travail partagé, c’est un acteur majeur dans la démocratisation de la technologie, permettant à des individus de tous horizons de développer leurs compétences, de créer des entreprises innovantes et de célébrer leur passion pour la technologie lors d’événements stimulants.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="section-title">MolenGeek dans la Presse</h1>
+                    <p class="lead">
+                        Découvrez ce que les médias disent de MolenGeek, un écosystème technologique qui démocratise l'accès à la technologie à travers des formations, un incubateur, et des événements inspirants.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="public/img/press.png" class="img-fluid rounded shadow-lg" alt="Presse MolenGeek">
+                </div>
+            </div>
         </div>
     </section>
-   
-   
-  <!-- Footer -->
-  <footer class="footer text-white py-4">
-    <div class="container">
-      <div class="row">
-        <!-- Réseaux Sociaux -->
-        <div class="col-12 text-center mb-3">
-          <div class="social-icons d-flex justify-content-center gap-3">
-            <a href="https://facebook.com" class="text-white text-decoration-none">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://twitter.com" class="text-white text-decoration-none">
-              <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://instagram.com" class="text-white text-decoration-none">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
+
+    <!-- Articles de Presse -->
+    <section class="section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nos Apparitions dans les Médias</h2>
+            <div class="row g-4">
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg press-card">
+                        <img src="public/img/press-article1.jpg" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-newspaper fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">MolenGeek : Former la Nouvelle Génération Tech</h5>
+                            <p class="card-text">Un article du journal Le Soir sur nos formations innovantes en programmation et cybersécurité.</p>
+                            <p class="card-text small">Publié le 15 juin 2025 - Le Soir</p>
+                            <a href="#" class="btn btn-primary mt-3">Lire l'article</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg press-card">
+                        <img src="public/img/press-article2.jpg" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-microphone fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">L'Incubateur MolenGeek Boost les Startups</h5>
+                            <p class="card-text">Reportage RTBF sur notre soutien aux entrepreneurs technologiques.</p>
+                            <p class="card-text small">Diffusé le 10 juillet 2025 - RTBF</p>
+                            <a href="#" class="btn btn-primary mt-3">Voir le reportage</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 card-animation">
+                    <div class="card border-0 shadow-lg press-card">
+                        <img src="public/img/press-article3.jpg" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                <i class="fas fa-video fa-2x text-white"></i>
+                            </div>
+                            <h5 class="card-title">Hackathons MolenGeek : L'Innovation en Action</h5>
+                            <p class="card-text">Couverture de La Libre sur nos événements collaboratifs et créatifs.</p>
+                            <p class="card-text small">Publié le 20 mai 2025 - La Libre</p>
+                            <a href="#" class="btn btn-primary mt-3">Lire l'article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-  
-        <!-- Copyright et Crédit -->
-        <div class="col-12 text-center">
-          <p class="mb-1">
-            &copy; <span class="fw-bold">MolenGeek</span>. Tous droits réservés.
-          </p>
-          <p class="small">
-            Designed by <span class="fw-bold">MolenGeek</span>
-          </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="social-icons mb-3 d-flex justify-content-center gap-3">
+                        <a href="https://facebook.com" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-1">© Copyright <span class="fw-bold">MolenGeek</span>. Tous droits réservés.</p>
+                    <p class="small">Conçu par <a href="#" class="text-primary">MolenGeek</a></p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  
-  <script type="module" src="public/js/FAQ.js"></script>
-  <script type="module" src="public/js/caderoussel.js"></script>
-  <script type="module" src="public/js/main.js"></script>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#hamburgerButton').click(function () {
+                $('#navMenu').toggleClass('responsive');
+            });
+        });
+    </script>
+</body>
+</html>

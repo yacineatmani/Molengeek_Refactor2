@@ -1,13 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
+    <title>Campus - MolenGeek</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <h1>CAMPUS</h1>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .video-campus {
+            max-width: 600px;
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+        .campus-video-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .video-poster {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .testimonial-video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: none;
+        }
+        .btn-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.9);
+            color: #667eea;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .btn-play:hover {
+            background: rgba(255,255,255,1);
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .video-controls {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+        .video-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .campus-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-top: 80px;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .campus-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('public/img/codeur.png') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .campus-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body class="bg-gradient min-h-screen font-pocket">
      <!-- Navbar -->
@@ -36,6 +135,34 @@
         
       </nav>
 
+    <!-- Hero Section -->
+    <section class="campus-hero text-white">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">🏢 CAMPUS MOLENGEEK</h1>
+            <p class="lead mb-4">Découvrez notre écosystème technologique innovant où naissent les futurs talents du numérique</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p>Un espace d'apprentissage moderne, des formations de pointe et une communauté dynamique vous attendent dans notre campus au cœur de Molenbeek.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vidéo de présentation -->
+    <section class="py-4">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h3>🎥 Découvrez MolenGeek en vidéo</h3>
+                <p class="text-muted">Une présentation de notre campus et de notre mission</p>
+            </div>
+            <div class="campus-video-container">
+                <video class="video-campus" controls muted poster="public/img/molengeekLogo.png">
+                    <source src="public/video/Molengeek.hajar.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+        </div>
+    </section>
 
     <!-- Présentation -->
     <section class="section">
@@ -54,6 +181,78 @@
         </div>
     </section>
 
+    <!-- Témoignages -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Témoignages de nos participants</h2>
+            <div class="row g-4">
+                <!-- Témoignage 1 -->
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-container">
+                            <img src="public/img/Sara.jpg" alt="Sara Oualad" class="video-poster" onerror="this.src='public/img/CTO.jpg'">
+                            <video class="testimonial-video" muted preload="metadata">
+                                <source src="public/video/1.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                            <button class="btn-play" type="button">▶</button>
+                            <div class="video-controls">
+                                <button class="btn-sound" type="button">🔊</button>
+                                <button class="btn-stop" type="button">⏹</button>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="mt-3">Sara Oualad</h5>
+                            <p class="text-muted">"Cette formation a changé ma vie !"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Témoignage 2 -->
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-container">
+                            <img src="public/img/webDev.png" alt="Kasha" class="video-poster" onerror="this.src='public/img/codeur.png'">
+                            <video class="testimonial-video" muted preload="metadata">
+                                <source src="public/video/2.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                            <button class="btn-play" type="button">▶</button>
+                            <div class="video-controls">
+                                <button class="btn-sound" type="button">🔊</button>
+                                <button class="btn-stop" type="button">⏹</button>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="mt-3">Kasha</h5>
+                            <p class="text-muted">"J'ai découvert ma passion pour le code !"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Témoignage 3 -->
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-container">
+                            <img src="public/img/codeur.png" alt="Pedro Sanchez" class="video-poster">
+                            <video class="testimonial-video" muted preload="metadata">
+                                <source src="public/video/3.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                            <button class="btn-play" type="button">▶</button>
+                            <div class="video-controls">
+                                <button class="btn-sound" type="button">🔊</button>
+                                <button class="btn-stop" type="button">⏹</button>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="mt-3">Pedro Sanchez</h5>
+                            <p class="text-muted">"Un environnement d'apprentissage exceptionnel !"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -62,6 +261,90 @@
         </div>
     </footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="public/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fonctionnalité hamburger menu
+            $('#hamburgerButton').click(function() {
+                $('#navMenu').toggleClass('responsive');
+            });
+
+            // Fonctionnalité des témoignages vidéo
+            $('.btn-play').on('click', function(e) {
+                e.preventDefault();
+                console.log('Play button clicked');
+                
+                const container = $(this).closest('.video-container');
+                const poster = container.find('.video-poster');
+                const video = container.find('.testimonial-video')[0];
+                const controls = container.find('.video-controls');
+                const playBtn = $(this);
+
+                if (video) {
+                    // Cacher le poster et le bouton play
+                    poster.fadeOut(300);
+                    playBtn.fadeOut(300);
+                    
+                    // Afficher la vidéo et les contrôles
+                    container.find('.testimonial-video').fadeIn(300);
+                    controls.fadeIn(300);
+                    
+                    // Démarrer la vidéo
+                    video.play().catch(function(error) {
+                        console.log('Erreur de lecture vidéo:', error);
+                    });
+                } else {
+                    console.log('Vidéo non trouvée');
+                }
+            });
+
+            // Bouton son
+            $('.btn-sound').on('click', function(e) {
+                e.preventDefault();
+                const video = $(this).closest('.video-container').find('.testimonial-video')[0];
+                if (video) {
+                    video.muted = !video.muted;
+                    $(this).text(video.muted ? '🔊' : '🔇');
+                }
+            });
+
+            // Bouton stop
+            $('.btn-stop').on('click', function(e) {
+                e.preventDefault();
+                const container = $(this).closest('.video-container');
+                const video = container.find('.testimonial-video')[0];
+                const poster = container.find('.video-poster');
+                const playBtn = container.find('.btn-play');
+                const controls = container.find('.video-controls');
+
+                if (video) {
+                    // Arrêter la vidéo
+                    video.pause();
+                    video.currentTime = 0;
+                    
+                    // Réafficher le poster et le bouton play
+                    container.find('.testimonial-video').fadeOut(300);
+                    controls.fadeOut(300);
+                    poster.fadeIn(300);
+                    playBtn.fadeIn(300);
+                }
+            });
+
+            // Gérer la fin de la vidéo
+            $('.testimonial-video').on('ended', function() {
+                const container = $(this).closest('.video-container');
+                const poster = container.find('.video-poster');
+                const playBtn = container.find('.btn-play');
+                const controls = container.find('.video-controls');
+
+                // Réafficher le poster et le bouton play
+                $(this).fadeOut(300);
+                controls.fadeOut(300);
+                poster.fadeIn(300);
+                playBtn.fadeIn(300);
+            });
+        });
+    </script>
 </body>
 </html>

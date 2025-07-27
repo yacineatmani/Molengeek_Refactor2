@@ -8,6 +8,121 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/caderousel.css">
+    <style>
+        /* Styles pour la vidéo principale */
+        .presentation-section {
+            max-height: 95vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .video-wrapper video {
+            max-height: 90vh;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Style pour le bouton son de la vidéo principale */
+        .sound-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .sound-toggle:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+        }
+        
+        /* Styles pour les témoignages */
+        .testimonial-card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        .video-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .testimonial-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btn-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.9);
+            color: #667eea;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            font-weight: bold;
+        }
+        .btn-play:hover {
+            background: rgba(255,255,255,1);
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .video-controls {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+            z-index: 15;
+        }
+        .video-controls button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        .video-controls button:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.05);
+        }
+        
+        /* Amélioration de la section témoignages */
+        .bg-light {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            padding: 60px 0;
+        }
+    </style>
     </head>
 <body class="bg-gradient min-h-screen font-pocket">
 
@@ -221,23 +336,24 @@
 
 
 <!-- About MolenGeek (Témoignages Vidéo) -->
-<section class="bg-light py-1">
+<section class="bg-light py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Témoignages de nos participants</h2>
-      <div class="row">
+      <h2 class="text-center mb-5">🎬 Témoignages de nos participants</h2>
+      <p class="text-center text-muted mb-5">Découvrez les histoires inspirantes de ceux qui ont transformé leur vie grâce à MolenGeek</p>
+      <div class="row g-4">
         <!-- Vidéo 1 -->
         <div class="col-md-4">
           <div class="card testimonial-card h-100">
             <div class="video-container">
-              <img src="./public/img/CTO.jpg" alt="Coding School" class="video-poster">
-              <video class="testimonial-video" muted>
+              <img src="./public/img/CTO.jpg" alt="Sara Oualad" class="video-poster">
+              <video class="testimonial-video" muted preload="metadata">
                 <source src="./public/video/1.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo.
               </video>
-              <button class="btn-play">▶ Play</button>
+              <button class="btn-play" type="button">▶</button>
               <div class="video-controls">
-                <button class="btn-sound">🔊 Son</button>
-                <button class="btn-stop">⏹ Stop</button>
+                <button class="btn-sound" type="button">🔊 Son</button>
+                <button class="btn-stop" type="button">⏹ Stop</button>
               </div>
             </div>
             <div class="card-body text-center">
@@ -250,20 +366,20 @@
         <div class="col-md-4">
           <div class="card testimonial-card h-100">
             <div class="video-container">
-              <img src="./public/img/webDev.png" alt="Coding School" class="video-poster">
-              <video class="testimonial-video" muted>
+              <img src="./public/img/webDev.png" alt="Kasha" class="video-poster">
+              <video class="testimonial-video" muted preload="metadata">
                 <source src="./public/video/2.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo.
               </video>
-              <button class="btn-play">▶ Play</button>
+              <button class="btn-play" type="button">▶</button>
               <div class="video-controls">
-                <button class="btn-sound">🔊 Son</button>
-                <button class="btn-stop">⏹ Stop</button>
+                <button class="btn-sound" type="button">🔊 Son</button>
+                <button class="btn-stop" type="button">⏹ Stop</button>
               </div>
             </div>
             <div class="card-body text-center">
               <h5 class="mt-3">Kasha</h5>
-              <p class="text-muted">"Cette formation a changé ma vie !"</p>
+              <p class="text-muted">"J'ai découvert ma passion pour le code !"</p>
             </div>
           </div>
         </div>
@@ -271,20 +387,20 @@
         <div class="col-md-4">
           <div class="card testimonial-card h-100">
             <div class="video-container">
-              <img src="./public/img/codeur.png" alt="Coding School" class="video-poster">
-              <video class="testimonial-video" muted>
+              <img src="./public/img/codeur.png" alt="Pedro Sanchez" class="video-poster">
+              <video class="testimonial-video" muted preload="metadata">
                 <source src="./public/video/3.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo.
               </video>
-              <button class="btn-play">▶ Play</button>
+              <button class="btn-play" type="button">▶</button>
               <div class="video-controls">
-                <button class="btn-sound">🔊</button>
-                <button class="btn-stop">⏹</button>
+                <button class="btn-sound" type="button">🔊 Son</button>
+                <button class="btn-stop" type="button">⏹ Stop</button>
               </div>
             </div>
             <div class="card-body text-center">
               <h5 class="mt-3">Pedro Sanchez</h5>
-              <p class="text-muted">"Cette formation a changé ma vie !"</p>
+              <p class="text-muted">"Un environnement d'apprentissage exceptionnel !"</p>
             </div>
           </div>
         </div>
@@ -328,4 +444,101 @@
   <script type="module" src="public/js/FAQ.js"></script>
   <script type="module" src="public/js/caderoussel.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="module" src="public/js/main.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Fonctionnalité hamburger menu
+      $('#hamburgerButton').click(function() {
+        $('#navMenu').toggleClass('responsive');
+      });
+
+      // Fonctionnalité du bouton son pour la vidéo principale
+      $('.sound-toggle').on('click', function(e) {
+        e.preventDefault();
+        const videoId = $(this).data('video');
+        const video = document.getElementById(videoId);
+        
+        if (video) {
+          video.muted = !video.muted;
+          $(this).text(video.muted ? '🔊' : '🔇');
+        }
+      });
+
+      // Fonctionnalité des témoignages vidéo
+      $('.btn-play').on('click', function(e) {
+        e.preventDefault();
+        console.log('Play button clicked');
+        
+        const container = $(this).closest('.video-container');
+        const poster = container.find('.video-poster');
+        const video = container.find('.testimonial-video')[0];
+        const controls = container.find('.video-controls');
+        const playBtn = $(this);
+
+        if (video) {
+          // Cacher le poster et le bouton play
+          poster.fadeOut(300);
+          playBtn.fadeOut(300);
+          
+          // Afficher la vidéo et les contrôles
+          container.find('.testimonial-video').fadeIn(300);
+          controls.fadeIn(300);
+          
+          // Démarrer la vidéo
+          video.play().catch(function(error) {
+            console.log('Erreur de lecture vidéo:', error);
+          });
+        }
+      });
+
+      // Bouton son des témoignages
+      $('.btn-sound').on('click', function(e) {
+        e.preventDefault();
+        const video = $(this).closest('.video-container').find('.testimonial-video')[0];
+        if (video) {
+          video.muted = !video.muted;
+          $(this).text(video.muted ? '🔊 Son' : '🔇 Muet');
+        }
+      });
+
+      // Bouton stop
+      $('.btn-stop').on('click', function(e) {
+        e.preventDefault();
+        const container = $(this).closest('.video-container');
+        const video = container.find('.testimonial-video')[0];
+        const poster = container.find('.video-poster');
+        const playBtn = container.find('.btn-play');
+        const controls = container.find('.video-controls');
+
+        if (video) {
+          // Arrêter la vidéo
+          video.pause();
+          video.currentTime = 0;
+          
+          // Réafficher le poster et le bouton play
+          container.find('.testimonial-video').fadeOut(300);
+          controls.fadeOut(300);
+          poster.fadeIn(300);
+          playBtn.fadeIn(300);
+        }
+      });
+
+      // Gérer la fin de la vidéo
+      $('.testimonial-video').on('ended', function() {
+        const container = $(this).closest('.video-container');
+        const poster = container.find('.video-poster');
+        const playBtn = container.find('.btn-play');
+        const controls = container.find('.video-controls');
+
+        // Réafficher le poster et le bouton play
+        $(this).fadeOut(300);
+        controls.fadeOut(300);
+        poster.fadeIn(300);
+        playBtn.fadeIn(300);
+      });
+    });
+  </script>
+</body>
+</html>
