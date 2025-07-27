@@ -3,37 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test SideGeek - Simple</title>
+    <title>SideGeek - MolenGeek</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="public/css/styles.css" rel="stylesheet">
     <style>
-        body { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            color: white; 
-            text-align: center; 
-            padding: 50px; 
-            font-family: Arial, sans-serif;
+        /* Styles pour les images du carrousel */
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
         }
-        .container { max-width: 800px; margin: 0 auto; }
-        .nav { background: #1A5F7A; padding: 20px; margin-bottom: 30px; }
-        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+        
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-top: 80px;
+            padding: 60px 0;
+            color: white;
+        }
+        
+        /* Cards d'amélioration */
+        .feature-card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Section présentation */
+        .presentation-card {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+        
+        /* Icones colorées */
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
     </style>
 </head>
-<body>
-    <div class="nav">
-        <a href="index.html">CAMPUS</a>
-        <a href="formation.html">FORMATION</a>
-        <a href="agenda.html">AGENDA</a>
-        <a href="sidegeek.html">SIDEGEEK</a>
-    </div>
+<body class="bg-gradient min-vh-100 font-pocket">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <img src="public/img/molengeekLogo.png" alt="MolenGeek Logo" class="logo">
+        </div>
+        <button class="navbar__toggle" id="hamburgerButton">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <ul class="navbar__menu" id="navMenu">
+            <li><a href="index.html">CAMPUS</a></li>
+            <li><a href="formation.html">FORMATION</a></li>
+            <li><a href="coworking.html">COWORKING</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="a_propos.html">À PROPOS</a></li>
+            <li><a href="presse.html">PRESSE</a></li>
+            <li><a href="sidegeek.html" class="active">SIDEGEEK</a></li>
+            <li><a href="job.html">JOBS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">🚀 SIDEGEEK</h1>
+            <p class="lead mb-4">Découvrez les projets innovants et les initiatives créatives de la communauté MolenGeek</p>
+            <p>Un espace dédié aux projets parallèles, aux expérimentations technologiques et aux collaborations inspirantes.</p>
+        </div>
+    </section>
+
+    <!-- Présentation -->
+    <section class="section py-5">
+        <div class="container">
+            <div class="presentation-card bg-white rounded shadow-lg overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-md-8 p-5">
+                        <h2 class="section-title text-primary mb-4">🎯 Présentation de MolenGeek</h2>
+                        <p class="text-muted mb-3">
+                            MolenGeek est une communauté dynamique qui aide les jeunes à développer des compétences en technologie,
+                            en entrepreneuriat et en innovation. Nous créons un écosystème où l'apprentissage, la créativité et 
+                            l'ambition se rencontrent.
+                        </p>
+                        <p class="text-muted mb-4">
+                            À travers nos programmes, événements et espaces de coworking, nous accompagnons chaque talent 
+                            dans sa transformation digitale et son développement professionnel.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="icon-circle bg-primary text-white">
+                                        <i class="fas fa-graduation-cap fa-2x"></i>
+                                    </div>
+                                    <h6>Formations</h6>
+                                    <small class="text-muted">Tech & Digital</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="icon-circle bg-success text-white">
+                                        <i class="fas fa-rocket fa-2x"></i>
+                                    </div>
+                                    <h6>Innovation</h6>
+                                    <small class="text-muted">Projets créatifs</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
+                        <img src="./public/img/Chienvert.png" alt="MolenGeek" class="img-fluid rounded shadow" style="max-height: 300px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos domaines d'expertise -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">🌟 Nos Domaines d'Expertise</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="icon-circle bg-primary text-white">
+                            <i class="fas fa-code fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Développement Web</h5>
+                        <p class="card-text">Maîtrise des technologies modernes : React, Node.js, Python, et plus encore.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="icon-circle bg-warning text-white">
+                            <i class="fas fa-brain fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Intelligence Artificielle</h5>
+                        <p class="card-text">Exploration des dernières avancées en IA, Machine Learning et Data Science.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="icon-circle bg-info text-white">
+                            <i class="fas fa-bullhorn fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Marketing Digital</h5>
+                        <p class="card-text">Stratégies digitales, réseaux sociaux et création de contenu engageant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie de projets -->
+    <section class="section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">📸 Galerie de Nos Projets</h2>
+            <p class="text-center text-muted mb-5">Découvrez quelques-unes de nos réalisations et initiatives créatives</p>
+            <div id="carouselExampleAutoplaying" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./public/img/Marketing.png" class="d-block w-100" alt="Marketing Digital">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Marketing Digital</h5>
+                            <p>Stratégies innovantes pour l'ère numérique</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./public/img/image-3.png" class="d-block w-100" alt="Innovation Tech">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Innovation Technologique</h5>
+                            <p>Projets créatifs et solutions disruptives</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./public/img/image-4.png" class="d-block w-100" alt="Collaboration">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Collaboration</h5>
+                            <p>Travail d'équipe et projets communautaires</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./public/img/miniature.png" class="d-block w-100" alt="Créativité">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Créativité</h5>
+                            <p>Expression artistique et design innovant</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./public/img/webDev.png" class="d-block w-100" alt="Développement Web">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Développement Web</h5>
+                            <p>Applications modernes et responsive design</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
     
-    <div class="container">
-        <h1>🚀 SIDEGEEK - TEST VERSION</h1>
-        <p>Si vous voyez cette page, sidegeek.html fonctionne !</p>
-        <p>Timestamp: 27 juillet 2025 - 22:10</p>
+    <!-- Call to Action -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <div class="container text-center text-white">
+            <h2 class="mb-4">🎉 Rejoins la Communauté SideGeek !</h2>
+            <p class="lead mb-4">Prêt à explorer de nouveaux horizons technologiques ? Viens découvrir nos projets et partager tes idées !</p>
+            <div class="row justify-content-center g-3">
+                <div class="col-auto">
+                    <a href="index.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-home me-2"></i>Découvrir le Campus
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="formation.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-graduation-cap me-2"></i>Voir les Formations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Réseaux Sociaux -->
+                <div class="col-12 text-center mb-3">
+                    <div class="social-icons d-flex justify-content-center gap-3">
+                        <a href="https://facebook.com" class="text-white text-decoration-none">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://twitter.com" class="text-white text-decoration-none">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://instagram.com" class="text-white text-decoration-none">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
         
-        <h2>🎯 Projets SideGeek</h2>
-        <p>Espace dédié aux projets innovants de MolenGeek</p>
-        
-        <a href="sidegeek-full.html" style="color: yellow;">Version complète</a>
-    </div>
-</body>
-</html>
+                <!-- Copyright et Crédit -->
+                <div class="col-12 text-center">
+                    <p class="mb-1">
+                        &copy; Copyright <span class="fw-bold">MolenGeek</span>. Tous droits réservés.
+                    </p>
+                    <p class="small">
+                        Designed by <span class="fw-bold text-primary">MolenGeek</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script type="module" src="public/js/caderoussel.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script type="module" src="public/js/main.js"></script>
+      <script>
+          $(document).ready(function() {
+              // Fonctionnalité hamburger menu
+              $('#hamburgerButton').click(function() {
+                  $('#navMenu').toggleClass('responsive');
+              });
+              
+              // Animation des cartes au scroll
+              $(window).scroll(function() {
+                  $('.feature-card').each(function() {
+                      const elementTop = $(this).offset().top;
+                      const elementBottom = elementTop + $(this).outerHeight();
+                      const viewportTop = $(window).scrollTop();
+                      const viewportBottom = viewportTop + $(window).height();
+                      
+                      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                          $(this).addClass('animate__animated animate__fadeInUp');
+                      }
+                  });
+              });
+          });
+      </script>
+    </body>
+    </html>
+    
